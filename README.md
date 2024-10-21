@@ -1,6 +1,6 @@
 ![Demo](/public/banner.jpg)
 
-# 🏦 Payment Form App
+# 🏦 Payment Payment Template
 
 This is a simple React application that integrates Stripe payment processing. Users can select the number of sites and a billing period (monthly or yearly), and the price is automatically calculated. The app supports routing for the payment form, success page, error page, and handles automatic redirects.
 
@@ -11,6 +11,18 @@ This is a simple React application that integrates Stripe payment processing. Us
 - **React Router:** Smooth navigation between the payment form, success, and error pages.
 - **Responsive Design:** The payment form is styled to look great on desktop and mobile devices.
 - **Error Handling:** In case of a failed payment, users are redirected to an error page with the option to retry.
+- **API with Endpoints:** The application exposes a set of API endpoints for payment processing, including:
+
+```bash
+- POST /api/payment/process-payment: Create a payment session.
+- POST /api/payment/webhook: Handle payment callbacks from Stripe.
+- GET /api/payment/payments: Retrieve all payment intents.
+- GET /api/payment/charges: Retrieve all completed charges.
+- POST /api/payment/refund: Process refunds for payments.
+- POST /api/customers: Create new customers in Stripe.
+- POST /api/payment/subscription: Create subscriptions for customers.
+- GET /api/payment/status/:paymentIntentId: Get the status of a specific payment intent.
+```
 
 ## 🛠 Tech Stack
 
@@ -18,6 +30,9 @@ This is a simple React application that integrates Stripe payment processing. Us
 - **Stripe.js:** Used to integrate payment processing with Stripe.
 - **React Router:** For client-side routing.
 - **CSS:** Custom styles for a clean and modern user experience.
+- **NodeJS:** JavaScript runtime for building scalable server-side applications.
+- **ExpressJS:** Minimal web framework for Node.js, used to create API endpoints and handle payment processing with Stripe.
+- **Swagger**: API documentation tool for defining and visualizing API endpoints.
 
 ## 🚀 Getting Started
 
@@ -125,10 +140,18 @@ To deploy this app:
 
 ## ⚙️ API Reference
 
+![Demo](/public/banner_2.jpg)
+
 This app relies on an external payment processing API at:
 
-- `/api/payment/process-payment/stripe`: This endpoint is used to initiate the payment session for Stripe.
+- `/api/payment/process-payment`: This endpoint is used to initiate the payment session for Stripe.
 - `/api/payment/process-payment/webhook`: This endpoint is used to handle callback payment data.
+- `/api/payment/process-payment/payments:` This endpoint retrieves a list of all payment intents made via Stripe.
+- `/api/payment/process-payment/charges:` This endpoint retrieves a list of all completed charges processed by Stripe.
+- `/api/payment/refund:` This endpoint is used to process refunds for payments.
+- `/api/customers:` This endpoint allows the creation of new customers in Stripe for future payment processing.
+- `/api/payment/subscription:` This endpoint is used to create subscriptions for customers.
+- `/api/payment/status/:paymentIntentId:` This endpoint retrieves the status of a specific payment intent using its ID.
 
 ## 🤝 Contributing
 
