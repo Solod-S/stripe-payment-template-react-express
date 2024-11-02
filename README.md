@@ -65,7 +65,7 @@ To run this project locally, you need the following:
    ```bash
    REACT_APP_STRIPE_PUBLIC_KEY
    STRIPE_SECRET
-   STRIPE_SIGNING_SECRET
+   STRIPE_WEBHOOK_SECRET
    ```
 
 4. Start the development server:

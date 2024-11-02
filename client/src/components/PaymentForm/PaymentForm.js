@@ -20,6 +20,29 @@ const PaymentForm = () => {
     }
   };
 
+  // useEffect(() => {
+  //   const fetchPrices = async () => {
+  //     try {
+  //       const url = `http://localhost:5555/process-payment/stripe-prices`;
+
+  //       const response = await fetch(url, {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         //  body: JSON.stringify({ email }),
+  //       });
+  //       const { prices, currentSubscription } = await response.json();
+  //       console.log("Received prices:", prices);
+  //       //  console.log("Current subscribe:", currentSubscription);
+  //       //  setSetPrices(prices);
+  //       //  setCurrentSubscription(currentSubscription);
+  //     } catch (error) {
+  //       console.error("Error while getting prices:", error);
+  //     }
+  //   };
+
+  //   fetchPrices();
+  // }, []);
+
   useEffect(() => {
     setPrice(calculatePrice(sites, period));
   }, [sites, period]);

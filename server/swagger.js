@@ -1,22 +1,17 @@
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-
-const swaggerOptions = {
-  swaggerDefinition: {
+const options = {
+  definition: {
     openapi: "3.0.0",
     info: {
-      title: "Stripe Payment API",
+      title: "API Documentation",
       version: "1.0.0",
-      description: "API для обработки платежей через Stripe",
-      contact: {
-        name: "Разработчик",
-      },
-      servers: ["http://localhost:5555"],
+      description: "API Documentation for payment processing",
     },
   },
-  apis: ["./index.js"], // путь к файлу с эндпоинтами
+  apis: ["./swagger/*.js"], // путь к папке с файлами Swagger
 };
 
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
+const swaggerDocs = swaggerJsDoc(options);
 
 module.exports = { swaggerUi, swaggerDocs };
