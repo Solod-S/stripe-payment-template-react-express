@@ -2,6 +2,8 @@
  * @swagger
  * /api/payment/subscription:
  *   post:
+ *     tags:
+ *       - Payments
  *     summary: Create a subscription
  *     description: Creates a subscription for a customer. Ensure that the customer and price IDs are valid.
  *     requestBody:

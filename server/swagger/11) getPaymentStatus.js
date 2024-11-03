@@ -2,6 +2,8 @@
  * @swagger
  * /api/payment/status/{paymentIntentId}:
  *   get:
+ *     tags:
+ *       - Payments
  *     summary: Get payment status
  *     description: Retrieves the status of a payment intent.
  *     parameters:

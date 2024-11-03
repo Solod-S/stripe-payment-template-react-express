@@ -2,7 +2,11 @@ const express = require("express");
 const paymentRouter = require("express").Router();
 
 const {
+  getAllPrices,
   processPayment,
+  processSubscription,
+  updateSubscriptionPlan,
+  cancelSubscription,
   callbackWebhook,
   getAllPayments,
   getAllCharges,
@@ -11,6 +15,34 @@ const {
   subscriptionController,
   getPaymentStatus,
 } = require("../controllers/");
+
+// Get All Prices
+paymentRouter.post(
+  "/get-all-prices",
+  express.raw({ type: "application/json" }),
+  getAllPrices
+);
+
+// Create Payment
+paymentRouter.post(
+  "/process-subscription",
+  express.json(),
+  processSubscription
+);
+
+// Update Subscription Plan
+paymentRouter.post(
+  "/update-subscription-plan",
+  express.json(),
+  updateSubscriptionPlan
+);
+
+// Cancel Subscription Plan
+paymentRouter.post(
+  "/cancel-subscription-plan",
+  express.json(),
+  cancelSubscription
+);
 
 // Create Payment
 paymentRouter.post("/process-payment", express.json(), processPayment);

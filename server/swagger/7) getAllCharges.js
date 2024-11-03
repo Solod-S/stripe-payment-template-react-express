@@ -1,12 +1,14 @@
 /**
  * @swagger
- * /api/payment/payments:
+ * /api/payment/charges:
  *   get:
- *     summary: Get all payments
- *     description: Retrieves a list of all payment intents.
+ *     tags:
+ *       - Payments
+ *     summary: Get all completed payments
+ *     description: Retrieves a list of all completed charges.
  *     responses:
  *       200:
- *         description: List of payment intents
+ *         description: List of charges
  *         content:
  *           application/json:
  *             schema:
@@ -22,7 +24,7 @@
  *                     properties:
  *                       id:
  *                         type: string
- *                         example: "pi_123456789"
+ *                         example: "ch_123456789"
  *                       amount:
  *                         type: integer
  *                         example: 5000

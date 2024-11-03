@@ -2,6 +2,8 @@
  * @swagger
  * /api/payment/webhook:
  *   post:
+ *     tags:
+ *       - Payments
  *     summary: Handle payment webhook
  *     description: Stripe webhook for processing payment events.
  *     requestBody:

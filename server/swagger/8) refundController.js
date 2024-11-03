@@ -1,9 +1,11 @@
 /**
  * @swagger
- * /api/payment/process-payment:
+ * /api/payment/refund:
  *   post:
- *     summary: Create a payment session
- *     description: Creates a Stripe payment session.
+ *     tags:
+ *       - Payments
+ *     summary: Refund a payment
+ *     description: Creates a refund for a specified payment intent.
  *     requestBody:
  *       required: true
  *       content:
@@ -11,29 +13,26 @@
  *           schema:
  *             type: object
  *             properties:
- *               price:
- *                 type: number
- *                 example: 5000
- *               sites:
- *                 type: number
- *                 example: 3
- *               period:
+ *               paymentIntentId:
  *                 type: string
- *                 example: "monthly"
+ *                 example: "pi_123456789"
  *     responses:
  *       200:
- *         description: Payment session created
+ *         description: Refund created
  *         content:
  *           application/json:
  *             schema:
  *               type: object
  *               properties:
- *                 id:
- *                   type: string
- *                   example: "session_id"
  *                 success:
  *                   type: boolean
  *                   example: true
+ *                 data:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: string
+ *                       example: "re_123456789"
  *       500:
  *         description: Internal server error
  */

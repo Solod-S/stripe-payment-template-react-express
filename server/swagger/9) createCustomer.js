@@ -2,6 +2,8 @@
  * @swagger
  * /api/customers:
  *   post:
+ *     tags:
+ *       - Payments
  *     summary: Create a customer
  *     description: Creates a new customer in Stripe.
  *     requestBody:
