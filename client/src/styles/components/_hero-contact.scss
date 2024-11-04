@@ -1,0 +1,145 @@
+.hero-contact {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  &:after {
+    position: absolute;
+    z-index: 2;
+
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(47, 48, 58, 0.4);
+  }
+  // background-color: #52535d;
+
+  // @media screen and (max-width: $breakpointBeeforeTablet) {
+  //   padding-top: 118px;
+  //   padding-bottom: 118px;
+
+  //   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  //     url(../../images/hero-mobile.webp);
+  //   content: '';
+  //   background-size: cover;
+  //   background-repeat: no-repeat;
+  //   max-width: 480px;
+  //   @media screen and (min-resolution: 2dppx) {
+  //     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  //       url(../../images/hero-mobile@2x.webp);
+  //   }
+  //   @media screen and (min-resolution: 3dppx) {
+  //     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+  //       url(../../images/hero-mobile@3x.webp);
+  //   }
+  // }
+  @media screen and (min-width: $breakpointTablet) {
+    max-width: 768px;
+    // padding-top: 118px;
+    // padding-bottom: 118px;
+
+    // background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //   url(../../images/hero-tablet.webp);
+    // content: '';
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    // @media screen and (min-resolution: 2dppx) {
+    //   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //     url(../../images/hero-tablet@2x.webp);
+    // }
+    // @media screen and (min-resolution: 3dppx) {
+    //   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //     url(../../images/hero-tablet@3x.webp);
+    // }
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    max-width: 1600px;
+    // padding-top: 200px;
+    // padding-bottom: 200px;
+
+    // background-size: cover;
+    // background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //   url(../../images/hero-pc.webp);
+    // content: '';
+    // @media screen and (min-resolution: 2dppx) {
+    //   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //     url(../../images/hero-pc@2x.webp);
+    // }
+    // @media screen and (min-resolution: 3dppx) {
+    //   background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //     url(../../images/hero-pc@3x.webp);
+    // }
+  }
+
+  &__title {
+    position: absolute;
+    z-index: 3;
+    top: 17%;
+    left: 50%;
+    transform: translatex(-50%);
+
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 900;
+
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $primaryWhiteColor;
+    @media screen and (min-width: $breakpointBeeforeTell) {
+      font-size: 15px;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      font-size: 33px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      font-size: 44px;
+    }
+  }
+  &__video {
+    display: block;
+    width: 100%;
+    z-index: 1;
+  }
+  &__button {
+    position: absolute;
+    z-index: 3;
+    bottom: 14%;
+    left: 50%;
+    transform: translatex(-50%);
+    padding: 10px 0;
+
+    color: $primaryWhiteColor;
+    background-color: $primaryAccentColor;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(30 / 16);
+    letter-spacing: 0.06em;
+    font-family: inherit;
+    transition:
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include hoverBtn();
+    @include focusBtn();
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+}

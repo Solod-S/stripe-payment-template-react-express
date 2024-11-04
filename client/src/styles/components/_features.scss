@@ -1,0 +1,63 @@
+.features {
+  @media screen and (max-width: $breakpointBeeforeDesktop) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    padding-top: 94px;
+  }
+  &__wrapper {
+    background-color: $primaryBgColor;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    @media screen and (min-width: $breakpointDesktop) {
+      height: 120px;
+    }
+  }
+  &__list {
+    @media screen and (min-width: $breakpointTablet) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-basis: calc(100% / 2 - 30px);
+      margin-top: -30px;
+      margin-left: -30px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      display: flex;
+    }
+  }
+  &__item {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      @include marginBottomNotLastCh(30px);
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      width: 354px;
+      margin-top: 30px;
+      margin-left: 30px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      width: 270px;
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.1;
+    letter-spacing: 0.03em;
+
+    text-transform: uppercase;
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      text-align: center;
+    }
+  }
+  &__description {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+}

@@ -1,0 +1,278 @@
+header {
+  border-bottom: 1px solid #ececec;
+  @media screen and (max-width: $breakpointBeeforeTablet) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @media screen and (min-width: $breakpointTablet) {
+    padding-top: 21px;
+    padding-bottom: 21px;
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  &__menu-wrapper {
+    overflow-y: auto;
+    transition: transform 250ms linear;
+    @media screen and (max-width: $breakpointBeeforeTell) {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      z-index: 1;
+      transform: translateX(-120%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $primaryWhiteColor;
+    }
+    @media screen and (min-width: $breakpointTell) and (max-width: $breakpointBeeforeTablet) {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      z-index: 1;
+      padding: 48px 40px;
+      transform: translateX(-100%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $primaryWhiteColor;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      display: contents;
+    }
+  }
+  &__menu {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      margin-bottom: auto;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      display: flex;
+      align-items: center;
+      padding: 0;
+    }
+  }
+  &__list {
+    display: flex;
+
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      flex-direction: column;
+    }
+    // @media screen and (min-width: $breakpointTablet) {
+    //   margin-left: 88px;
+    // }
+    @media screen and (min-width: $breakpointDesktop) {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__item {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      @include marginBottomNotLastCh(32px);
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      position: relative;
+      @include marginRightNotLastCh('50px');
+    }
+  }
+
+  &__link {
+    @include hoverLink();
+    @include focusLink();
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $primaryTitleColor;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    @media screen and (max-width: $breakpointBeeforeTell) {
+      font-size: 40px;
+    }
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      font-size: 40px;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      font-size: 14px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      font-size: 14px;
+      padding: 30px 0;
+    }
+  }
+  &__contact-list {
+    display: flex;
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      flex-direction: column;
+      flex-direction: column-reverse;
+      margin-bottom: 64px;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      margin-left: auto;
+      flex-direction: column;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      margin-left: auto;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  &__item-contacts {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      @include marginBottomLastCh(32px);
+    }
+    @media screen and (min-width: $breakpointTablet) and (max-width: $breakpointBeeforeDesktop) {
+      @include marginBottomNotLastCh(10px);
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      position: relative;
+      @include marginRightNotLastCh('50px');
+    }
+  }
+  &__link-contacts {
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    color: $primaryTitleColor;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @include hoverLink();
+    @include focusLink();
+
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      font-size: 34px;
+      color: $labelColor;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      font-size: 12px;
+      color: $primaryTextColor;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      font-size: 14px;
+      color: $primaryTextColor;
+      padding: 30px 0;
+    }
+  }
+  &__link-contacts.--mobile-modificator {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      color: $primaryAccentColor;
+    }
+  }
+  &__icon {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      display: none;
+      fill: $primaryBlackColor;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      &--tablet-mail {
+        width: 14px;
+        height: 10px;
+      }
+      &--tablet-tell {
+        width: 10px;
+        height: 14px;
+      }
+      margin-right: 8px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.navigation__menu-wrapper.--is-open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  background-color: $primaryWhiteColor;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+
+  // @media screen and (min-width: $breakpointBeeforeTablet) {
+  //   display: block;
+  // }
+  @media screen and (min-width: $breakpointTablet) {
+    display: contents;
+  }
+}
+
+.navigation__link--current-page-status {
+  color: $primaryAccentColor;
+  @media screen and (min-width: $breakpointTablet) {
+    &::after {
+      position: absolute;
+      bottom: -36px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      transform: scalex(1);
+      background: $primaryAccentColor;
+      border-radius: 2px;
+    }
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    &::after {
+      position: absolute;
+      bottom: -32px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      transform: scalex(1);
+      background: $primaryAccentColor;
+      border-radius: 2px;
+    }
+  }
+}
+
+.navigation__link--slider {
+  @media screen and (min-width: $breakpointTablet) {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -21px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+      height: 4px;
+
+      background: $primaryAccentColor;
+      border-radius: 2px;
+    }
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -32px;
+      left: 0;
+      transform: scaleX(0);
+      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+      height: 4px;
+
+      background: $primaryAccentColor;
+      border-radius: 2px;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
+}

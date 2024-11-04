@@ -1,0 +1,63 @@
+.location {
+  background-color: $primaryBgColor;
+  @media screen and (min-width: $breakpointTablet) {
+    margin: 0 auto;
+  }
+  &__title {
+    color: $primaryTitleColor;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+    font-size: 28px;
+
+    @media screen and (min-width: $breakpointBeeforeDesktop) {
+      margin-bottom: 50px;
+      font-size: 36px;
+    }
+  }
+  &__google-link {
+    margin-bottom: 50px;
+  }
+  &__working-time {
+    color: $primaryTitleColor;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+    font-size: 28px;
+
+    @media screen and (min-width: $breakpointBeeforeDesktop) {
+      margin-bottom: 50px;
+      font-size: 36px;
+    }
+  }
+  &__working-contacts {
+    color: $primaryTitleColor;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 22px;
+    font-size: 28px;
+
+    @media screen and (min-width: $breakpointBeeforeDesktop) {
+      margin-bottom: 12px;
+      font-size: 22px;
+    }
+  }
+  &__contacts-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    @media screen and (max-width: $breakpointBeeforeDesktop) {
+      flex-direction: column;
+    }
+  }
+}
+.--inLocation {
+  font-size: 18px;
+}

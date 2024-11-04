@@ -1,0 +1,117 @@
+.footer {
+  background-color: $secondaryBgColor;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media screen and (max-width: $breakpointBeeforeTablet) {
+    text-align: center;
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    margin: 0 auto;
+    font-style: normal;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    // max-width: 1920px;
+  }
+  &__flex-wrapper {
+    @media screen and (max-width: $breakpointTablet) {
+      margin-bottom: 60px;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      display: flex;
+      justify-content: space-around;
+    }
+    @media screen and (min-width: $breakpointTablet) and (max-width: $breakpointBeeforeDesktop) {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 60px;
+    }
+  }
+  &__wrapper {
+    @media screen and (min-width: $breakpointTablet) {
+      // display: flex;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      display: flex;
+    }
+  }
+  &__contacts-wrapper {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      margin-bottom: 60px;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      // margin-right: 165px;
+    }
+  }
+  &__social-wrapper {
+    @media screen and (min-width: $breakpointDesktop) {
+      margin-left: 70px;
+    }
+  }
+  &__social-title {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: $primaryWhiteColor;
+    @media screen and (max-width: $breakpointBeeforeDesktop) {
+      text-align: center;
+    }
+  }
+  &--social-modificator {
+    background-color: rgba(255, 255, 255, 0.1);
+    fill: $primaryWhiteColor;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__subscribe-wrapper {
+    @media screen and (min-width: $breakpointDesktop) {
+      margin-left: 93px;
+    }
+  }
+}
+
+.logo--footer-modificator {
+  margin-bottom: 20px;
+  display: block;
+  color: $primaryBgColor;
+}
+
+.address {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: $primaryBgColor;
+
+  &__street {
+    color: $primaryBgColor;
+    margin-bottom: 8px;
+    @media screen and (min-width: $breakpointTablet) {
+      margin-bottom: 20px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      margin-bottom: 20px;
+    }
+  }
+  &__contact-item {
+    @media screen and (min-width: $breakpointTablet) {
+      @include marginBottomNotLastCh(8px);
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      @include marginBottomNotLastCh();
+    }
+  }
+  &__link {
+    @include hoverLink();
+    @include focusLink();
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      display: inline-block;
+    }
+  }
+}

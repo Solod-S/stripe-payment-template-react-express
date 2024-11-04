@@ -1,0 +1,36 @@
+.social-mobile {
+  display: none;
+  @media screen and (max-width: $breakpointBeeforeTablet) {
+    display: flex;
+
+    &__item {
+      @media screen and (max-width: $breakpointBeeforeTell) {
+        @include marginRightNotLastCh(3px);
+      }
+      @media screen and (min-width: $breakpointBeeforeTell) {
+        @include marginRightNotLastCh(10px);
+      }
+    }
+    &__item:not(:last-child)::after {
+      border: 1px solid rgba(33, 33, 33, 0.2);
+      transform: rotate(90deg);
+      content: '';
+      @media screen and (max-width: $breakpointBeeforeTell) {
+        margin-left: 5px;
+      }
+      @media screen and (min-width: $breakpointTell) {
+        margin-left: 9px;
+      }
+    }
+    &__link {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: 0.02em;
+      color: $primaryAccentColor;
+    }
+  }
+}
+
+// .social-mobile__link {
+// }

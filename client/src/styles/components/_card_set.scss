@@ -1,0 +1,98 @@
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  @media screen and (min-width: $breakpointTablet) {
+    // flex-basis: calc(100% / 2-30px);
+    flex-basis: calc(100% / 2);
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    flex-basis: calc(100% / 2);
+    // flex-basis: calc(100% / 3-30px);
+    margin-top: -30px;
+    margin-left: -30px;
+  }
+
+  &__item {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      width: 100%;
+      @include marginBottomNotLastCh(30px);
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      width: 354px;
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      width: 370px;
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+  }
+  &__link {
+    @include hoverCar-setShadow();
+    @include focusCar-setShadow();
+    display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  &__link:hover .graphic-content__img-overflow,
+  &__link:focus .graphic-content__img-overflow {
+    transform: translateY(0%);
+  }
+}
+
+.graphic-content {
+  position: relative;
+  overflow: hidden;
+  &__img {
+    display: block;
+    width: 100%;
+    height: 294px;
+  }
+  &__img-overflow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(101%);
+    padding: 63px 24px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    font-size: 18px;
+    line-height: calc(28 / 18);
+    letter-spacing: 0.03em;
+    color: $primaryWhiteColor;
+    background: rgba(33, 150, 243, 0.9);
+    opacity: 1;
+  }
+}
+
+.text-content {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+
+  @media screen and (min-width: $breakpointBeeforeTablet) {
+    height: 160px;
+  }
+  &__title {
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+  }
+  &__text {
+    color: primaryTextColor;
+
+    line-height: 30px;
+    letter-spacing: 0.03em;
+  }
+}

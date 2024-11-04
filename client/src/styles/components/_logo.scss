@@ -1,0 +1,19 @@
+.logo {
+  color: $primaryBlackColor;
+
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  &--pre-color {
+    color: $primaryAccentColor;
+  }
+  @media screen and (min-width: $breakpointTablet) {
+    margin-right: 88px;
+  }
+  @media screen and (min-width: $breakpointDesktop) {
+    font-size: 26px;
+    margin-right: 90px;
+  }
+}

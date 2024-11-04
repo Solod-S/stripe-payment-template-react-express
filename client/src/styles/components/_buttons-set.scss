@@ -1,0 +1,41 @@
+.buttons-set {
+  display: flex;
+  @media screen and (max-width: $breakpointBeeforeTablet) {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-basis: calc(100% / 3 - 16px);
+    margin-right: -8px;
+    margin-top: -8px;
+  }
+  justify-content: center;
+  margin-bottom: 50px;
+  &__item {
+    @include marginRightNotLastCh(8px);
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+  }
+  &__button {
+    @include hoverButtons-set();
+    @include focusButtons-set();
+    @include activeButtons-set();
+    padding: 6px 22px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+    font-family: inherit;
+    background-color: $primaryBgColor;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus {
+      outline: none;
+    }
+  }
+}

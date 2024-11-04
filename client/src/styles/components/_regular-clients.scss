@@ -1,0 +1,101 @@
+.clients {
+  &__title {
+    color: $primaryTitleColor;
+    font-weight: 700;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+    font-size: 28px;
+
+    @media screen and (min-width: $breakpointBeeforeDesktop) {
+      margin-bottom: 50px;
+      font-size: 36px;
+    }
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      flex-wrap: wrap;
+      flex-basis: calc(100% / 2 - 30px);
+      margin-top: -30px;
+      margin-left: -30px;
+    }
+    @media screen and (max-width: $breakpointDesktop) {
+      flex-basis: calc(100% / 3 - 60px);
+      flex-wrap: wrap;
+      margin-top: -30px;
+      margin-left: -30px;
+    }
+  }
+  &__item {
+    @media screen and (max-width: $breakpointBeeforeTablet) {
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+
+    @media screen and (max-width: $breakpointDesktop) {
+      margin-left: 30px;
+      margin-top: 30px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      @include marginRightNotLastCh();
+    }
+  }
+  &__link {
+    width: 130px;
+    height: 92px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transform-origin: center right;
+    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid $thrdBgColor;
+    border-radius: 4px;
+    fill: $thrdBgColor;
+    @media screen and (min-width: $breakpointTell) {
+      width: 210px;
+      height: 92px;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      width: 226px;
+      height: 92px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      width: 170px;
+      height: 92px;
+    }
+  }
+  &__link:hover,
+  &__link:focus {
+    transform: translatex(-100%) rotateY(180deg);
+    fill: $primaryAccentColor;
+    width: 130px;
+    height: 92px;
+    border: 1px solid $primaryAccentColor;
+    border-radius: 4px;
+    @media screen and (min-width: $breakpointTell) {
+      width: 210px;
+      height: 92px;
+    }
+    @media screen and (min-width: $breakpointTablet) {
+      width: 226px;
+      height: 92px;
+    }
+    @media screen and (min-width: $breakpointDesktop) {
+      width: 170px;
+      height: 92px;
+    }
+  }
+  &__icon {
+    position: absolute;
+    backface-visibility: hidden;
+  }
+  &__icon--backview {
+    transform: rotateY(180deg);
+  }
+}

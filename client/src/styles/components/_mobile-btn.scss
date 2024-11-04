@@ -1,0 +1,40 @@
+.mobile-btn {
+  margin-left: auto;
+  z-index: 5;
+
+  &__icon-close {
+    display: none;
+    fill: $primaryTitleColor;
+  }
+  &__icon-menu {
+    fill: $primaryTitleColor;
+    transition: fill 2520ms liner;
+  }
+  &:hover &__icon-menu,
+  &:focus &__icon-menu,
+  &:hover &__icon-close,
+  &:focus &__icon-close {
+    fill: #2196f3;
+  }
+
+  @media screen and (min-width: $breakpointTablet) {
+    display: none;
+  }
+}
+.mobile-btn.--is-open .mobile-btn__icon-close {
+  display: block;
+}
+
+.mobile-btn.--is-open .mobile-btn__icon-menu {
+  display: none;
+}
+// .--is-open {
+// }
+// .mobile-btn__svg {
+// }
+// .mobile-btn__icon-close {
+// }
+// .mobile-btn__icon-menu {
+// }
+//   @include hoverBtn();
+//   @include focusBtn();
