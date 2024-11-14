@@ -4,6 +4,7 @@ const processPayment = require("./processPayment");
 const processSubscription = require("./processSubscription");
 const updateSubscriptionPlan = require("./updateSubscriptionPlan");
 const cancelSubscription = require("./cancelSubscription");
+const changePaymentMethod = require("./changePaymentMethod");
 const getAllPrices = require("./getAllPrices");
 const callbackWebhook = require("./callbackWebhook");
 const getAllPayments = require("./getAllPayments");
@@ -18,6 +19,7 @@ module.exports = {
   processSubscription: ctrlWrapper(processSubscription),
   updateSubscriptionPlan: ctrlWrapper(updateSubscriptionPlan),
   cancelSubscription: ctrlWrapper(cancelSubscription),
+  changePaymentMethod: ctrlWrapper(changePaymentMethod),
   getAllPrices: ctrlWrapper(getAllPrices),
   callbackWebhook: ctrlWrapper(callbackWebhook),
   getAllPayments: ctrlWrapper(getAllPayments),

@@ -7,6 +7,7 @@ const {
   processSubscription,
   updateSubscriptionPlan,
   cancelSubscription,
+  changePaymentMethod,
   callbackWebhook,
   getAllPayments,
   getAllCharges,
@@ -42,6 +43,13 @@ paymentRouter.post(
   "/cancel-subscription-plan",
   express.json(),
   cancelSubscription
+);
+
+// Change payment method
+paymentRouter.post(
+  "/change-payment-method",
+  express.json(),
+  changePaymentMethod
 );
 
 // Create Payment

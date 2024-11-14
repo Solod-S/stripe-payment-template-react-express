@@ -14,14 +14,19 @@ This is a simple React application that integrates Stripe payment processing. Us
 - **API with Endpoints:** The application exposes a set of API endpoints for payment processing, including:
 
 ```bash
-- POST /api/payment/process-payment: Create a payment session.
+- POST /api/payment/get-all-prices: Retrieve all available price plans.
+- POST /api/payment/process-subscription: Initiate a subscription process for a customer.
+- POST /api/payment/update-subscription-plan: Update the subscription plan for an existing customer.
+- POST /api/payment/cancel-subscription-plan: Cancel an active subscription plan for a customer.
+- POST /api/payment/change-payment-method: Create a session for the Stripe Customer Portal where a user can change their payment method.
+- POST /api/payment/process-payment: Initiate a one-time payment session for the customer using Stripe.
 - POST /api/payment/webhook: Handle payment callbacks from Stripe.
-- GET /api/payment/payments: Retrieve all payment intents.
-- GET /api/payment/charges: Retrieve all completed charges.
-- POST /api/payment/refund: Process refunds for payments.
-- POST /api/customers: Create new customers in Stripe.
+- GET /api/payment/payments: Retrieve all payment intents made via Stripe.
+- GET /api/payment/charges: Retrieve all completed charges processed by Stripe.
+- GET /api/payment/refund: Process a refund for a specific payment.
+- POST /api/payment/customers: Create new customers in Stripe.
 - POST /api/payment/subscription: Create subscriptions for customers.
-- GET /api/payment/status/:paymentIntentId: Get the status of a specific payment intent.
+- GET /api/payment/status/:paymentIntentId: Retrieve the status of a specific payment intent using its ID.
 ```
 
 ## 🛠 Tech Stack
@@ -144,13 +149,18 @@ To deploy this app:
 
 This app relies on an external payment processing API at:
 
-- `/api/payment/process-payment`: This endpoint is used to initiate the payment session for Stripe.
-- `/api/payment/process-payment/webhook`: This endpoint is used to handle callback payment data.
-- `/api/payment/process-payment/payments:` This endpoint retrieves a list of all payment intents made via Stripe.
-- `/api/payment/process-payment/charges:` This endpoint retrieves a list of all completed charges processed by Stripe.
-- `/api/payment/refund:` This endpoint is used to process refunds for payments.
-- `/api/customers:` This endpoint allows the creation of new customers in Stripe for future payment processing.
-- `/api/payment/subscription:` This endpoint is used to create subscriptions for customers.
+- `/api/payment/get-all-prices:` This endpoint retrieves all available price plans.
+- `/api/payment/process-subscription:` This endpoint initiates a subscription process for a customer.
+- `/api/payment/update-subscription-plan:` This endpoint updates the subscription plan for an existing customer.
+- `/api/payment/cancel-subscription-plan:` This endpoint cancels an active subscription plan for a customer.
+- `/api/payment/change-payment-method:` This endpoint creates a session for the Stripe Customer Portal where a user can change their payment method.
+- `/api/payment/process-payment:` This endpoint initiates a one-time payment session for the customer using Stripe.
+- `/api/payment/webhook:` This endpoint handles payment callback data (Stripe webhook).
+- `/api/payment/payments:` This endpoint retrieves a list of all payment intents made via Stripe.
+- `/api/payment/charges:` This endpoint retrieves a list of all completed charges processed by Stripe.
+- `/api/payment/refund:` This endpoint processes a refund for a specific payment.
+- `/api/payment/customers:` This endpoint allows the creation of new customers in Stripe for future payment processing.
+- `/api/payment/subscription:` This endpoint creates a subscription for a customer.
 - `/api/payment/status/:paymentIntentId:` This endpoint retrieves the status of a specific payment intent using its ID.
 
 ## 🤝 Contributing
