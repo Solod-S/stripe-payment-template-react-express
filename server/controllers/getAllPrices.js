@@ -8,7 +8,7 @@ const getAllPrices = async (req, res, next) => {
     // Если email присутствует, ищем клиентов с таким email через Stripe API
     const customersObf = await stripe.customers.list({ email });
     const customers = customersObf.data;
-
+    // console.log(`customers`, customers);
     // Получаем все активные цены для указанного продукта
     const prices = await stripe.prices.list({
       product: process.env.STRIPE_PRODUCT_ID,
@@ -16,7 +16,7 @@ const getAllPrices = async (req, res, next) => {
     });
 
     result.prices = prices.data;
-
+    console.log(`email`, email);
     if (email) {
       for (const customer of customers) {
         // Получаем список активных подписок клиента
@@ -24,11 +24,11 @@ const getAllPrices = async (req, res, next) => {
           customer: customer.id,
           status: "active",
         });
-
+        console.log(`subscr`, process.env.STRIPE_PRODUCT_ID);
         // Ищем подписку на продукт с указанным идентификатором продукта (на платформе пользователь с таким имейлом может купить разные продукты)
         const subscriptionForProduct = subscr.data.find(
           subscription =>
-            subscription.plan.product === process.env.STRIPE_STRIPE_PRODUCT_ID
+            subscription.plan.product === process.env.STRIPE_PRODUCT_ID
         );
 
         // Если найдена подписка на данный продукт, добавляем её в результат и прекращаем поиск

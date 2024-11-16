@@ -18,8 +18,8 @@ const processSubscription = async (req, res) => {
       ],
       customer_email: userEmail,
       mode: "subscription", // Subscription payment
-      success_url: "https://newsai.siliconbeez.com/app/dashboards",
-      cancel_url: "https://newsai.siliconbeez.com/app/dashboards",
+      success_url: "http://localhost:3000/success",
+      cancel_url: "http://localhost:3000/error",
     });
     //2) Возвращаем id сессии на клиент
     res.json({ sessionId: session.id }); // Send session Id to the front

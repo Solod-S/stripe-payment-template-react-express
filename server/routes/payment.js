@@ -18,11 +18,7 @@ const {
 } = require("../controllers/");
 
 // Get All Prices
-paymentRouter.post(
-  "/get-all-prices",
-  express.raw({ type: "application/json" }),
-  getAllPrices
-);
+paymentRouter.post("/get-all-prices", express.json(), getAllPrices);
 
 // Create Payment
 paymentRouter.post(

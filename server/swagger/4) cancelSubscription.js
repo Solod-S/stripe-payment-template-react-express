@@ -13,9 +13,7 @@
  *           schema:
  *             type: object
  *             properties:
- *               idToken:
- *                 type: string
- *                 description: "User's authentication token (if needed)."
+ *
  *               userEmail:
  *                 type: string
  *                 description: "The email of the user whose subscription is to be canceled."
